@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Match Game</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo" />
+    <string name="please_wait_to_start" />
 </resources>
