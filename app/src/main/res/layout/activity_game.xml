@@ -14,6 +14,7 @@
         android:padding="5dp">
 
         <ImageView
+            android:tag="bird"
             android:id="@+id/option1"
             android:layout_width="24dp"
             android:layout_height="32dp"
@@ -56,12 +57,10 @@
             android:src="@drawable/elephant" />
     </GridLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_below="@id/gridLayout">
 
-        <ImageView
+
+        <RelativeLayout
+            android:layout_below="@id/gridLayout"
             android:id="@+id/answerImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -73,8 +72,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/answerImage"
             android:layout_centerInParent="true"
-            android:textSize="25sp"
-            tools:text="Answer" />
-    </RelativeLayout>
+            android:textSize="35sp"
+            android:text="Bird" />
+
 
 </RelativeLayout>

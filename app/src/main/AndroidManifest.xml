@@ -19,6 +19,7 @@
         </activity>
 
         <activity android:name=".OptionFragment"/>
+        <activity android:name=".GameActivity"/>
     </application>
 
 </manifest>
