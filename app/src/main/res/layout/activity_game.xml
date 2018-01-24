@@ -4,77 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light"
+    android:background="#a1db7d"
     tools:context="com.example.rishabh.matchgame.GameActivity">
 
     <GridLayout
-        android:padding="5dp"
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        >
+        android:padding="5dp">
+
         <ImageView
-            android:src="@drawable/bird"
             android:id="@+id/option1"
             android:layout_width="24dp"
             android:layout_height="32dp"
-            android:layout_row="0"
             android:layout_column="0"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            />
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bird" />
 
         <ImageView
-            android:src="@drawable/lion"
             android:id="@+id/option2"
             android:layout_width="24dp"
             android:layout_height="32dp"
-             android:layout_row="0"
-             android:layout_column="1"
-            android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
-            />
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:src="@drawable/lion" />
+
         <ImageView
-            android:paddingTop="7dp"
             android:id="@+id/option3"
-            android:src="@drawable/cat"
             android:layout_width="24dp"
             android:layout_height="32dp"
-            android:layout_row="1"
             android:layout_column="0"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            />
-        <ImageView
+            android:layout_row="1"
+            android:layout_rowWeight="1"
             android:paddingTop="7dp"
-            android:src="@drawable/elephant"
+            android:src="@drawable/cat" />
+
+        <ImageView
             android:id="@+id/option4"
             android:layout_width="24dp"
             android:layout_height="32dp"
-            android:layout_row="1"
             android:layout_column="1"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            />
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:paddingTop="7dp"
+            android:src="@drawable/elephant" />
     </GridLayout>
 
     <RelativeLayout
-        android:layout_below="@id/gridLayout"
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="250dp"
+        android:layout_below="@id/gridLayout">
+
         <ImageView
             android:id="@+id/answerImage"
             android:layout_width="match_parent"
             android:layout_height="200dp" />
 
-         <TextView
-             android:layout_below="@id/answerImage"
-            android:layout_centerInParent="true"
+        <TextView
             android:id="@+id/answerText"
-            tools:text="Answer"
-            android:textSize="25sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/answerImage"
+            android:layout_centerInParent="true"
+            android:textSize="25sp"
+            tools:text="Answer" />
     </RelativeLayout>
 
 </RelativeLayout>
