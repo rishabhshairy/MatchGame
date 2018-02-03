@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation|screenLayout">
+            android:configChanges="orientation|screenLayout"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,8 +21,14 @@
         </activity>
         <activity android:name=".OptionFragment" />
         <activity android:name=".GameActivity" />
-        <activity android:name="learn.Learn_Activity" />
-        <activity android:name="learn.customSwip"></activity>
+        <activity
+            android:name=".LearnList"
+            android:label="@string/learn_name"
+            android:theme="@style/LearnTheme" />
+
+        <activity android:name=".PlayList"
+            android:label="@string/play_name"
+            android:theme="@style/PlayTheme"></activity>
     </application>
 
 </manifest>

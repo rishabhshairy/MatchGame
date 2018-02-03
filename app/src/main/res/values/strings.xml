@@ -2,4 +2,8 @@
     <string name="app_name">Match Game</string>
     <string name="todo" />
     <string name="please_wait_to_start" />
+
+
+    <string name="learn_name">Learning Section</string>
+    <string name="play_name">Game Section</string>
 </resources>

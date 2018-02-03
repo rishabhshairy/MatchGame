@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LearnTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">@android:color/holo_green_dark</item>
+        <item name="colorPrimaryDark">@android:color/holo_green_light</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="PlayTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/Purple</item>
+        <item name="colorPrimaryDark">@color/darkPurple</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
 </resources>

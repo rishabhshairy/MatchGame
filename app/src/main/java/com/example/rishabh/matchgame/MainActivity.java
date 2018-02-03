@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(new Intent(getApplicationContext(),OptionFragment.class));
+
             }
         },2000);
     }
