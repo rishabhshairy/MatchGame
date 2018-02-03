@@ -1,5 +1,6 @@
 package com.example.rishabh.matchgame;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +11,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import learn.Learn_Activity;
+
 public class LearnList extends AppCompatActivity {
     ArrayList<String> list;
     ArrayAdapter arrayAdapter;
     ListView listView;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_list);
         listView=(ListView)findViewById(R.id.learnList);
@@ -32,8 +35,16 @@ public class LearnList extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+            public void onItemClick(AdapterView<?> parent, View view, int item, long id) {
+                int i;
+                    switch (item)
+                    {
+                        case 0:i=0;
+                            Intent intent=new Intent(getApplicationContext(), Learn_Activity.class);
+                            intent.putExtra("animals",i);
+                            startActivity(intent);
+                            break;
+                    }
             }
         });
 
