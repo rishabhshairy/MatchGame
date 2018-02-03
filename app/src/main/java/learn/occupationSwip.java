@@ -9,14 +9,14 @@ import android.widget.ImageView;
 
 import com.example.rishabh.matchgame.R;
 
-public class customSwip extends PagerAdapter {
+public class occupationSwip extends PagerAdapter {
     private int[] resources={R.drawable.farmer,R.drawable.fireman,R.drawable.painter};
 
 
     private Context ctx;
     private LayoutInflater layoutInflater;
 
-    public customSwip(Context c){
+    public occupationSwip(Context c){
         ctx=c;
     }
 

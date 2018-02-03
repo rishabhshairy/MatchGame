@@ -9,7 +9,7 @@ import com.example.rishabh.matchgame.R;
 
 public class Learn_Activity extends AppCompatActivity {
     ViewPager viewPager;
-    learn.customSwip customSwip;
+    occupationSwip occupation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +18,14 @@ public class Learn_Activity extends AppCompatActivity {
         viewPager=(ViewPager)findViewById(R.id.viewPager);
         int i;
         Intent intent=getIntent();
-        i=intent.getIntExtra("animals",0);
-
-        customSwip=new customSwip(this);
-        viewPager.setAdapter(customSwip);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        i=intent.getIntExtra("choice",0);
+        switch (i)
+        {
+            case 0:break;
+            case 1:break;
+            case 2:occupation=new occupationSwip(this);
+          viewPager.setAdapter(occupation);
+          viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -42,5 +45,9 @@ public class Learn_Activity extends AppCompatActivity {
 
             }
         });
+                break;
+            case 3:break;
+        }
+
     }
 }

@@ -41,8 +41,23 @@ public class LearnList extends AppCompatActivity {
                     {
                         case 0:i=0;
                             Intent intent=new Intent(getApplicationContext(), Learn_Activity.class);
-                            intent.putExtra("animals",i);
+                            intent.putExtra("choice",i);
                             startActivity(intent);
+                            break;
+                        case 1:i=1;
+                            Intent intent1=new Intent(getApplicationContext(), Learn_Activity.class);
+                            intent1.putExtra("choice",i);
+                            startActivity(intent1);
+                            break;
+                        case 2:i=2;
+                            Intent intent2=new Intent(getApplicationContext(), Learn_Activity.class);
+                            intent2.putExtra("choice",i);
+                            startActivity(intent2);
+                            break;
+                        case 3:i=3;
+                            Intent intent3=new Intent(getApplicationContext(), Learn_Activity.class);
+                            intent3.putExtra("choice",i);
+                            startActivity(intent3);
                             break;
                     }
             }
