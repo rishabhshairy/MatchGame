@@ -1,5 +1,6 @@
 package com.example.rishabh.matchgame;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -23,14 +24,16 @@ public class OptionFragment extends AppCompatActivity {
         learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i=new Intent(getApplicationContext(),LearnList.class);
+                startActivity(i);
             }
         });
 
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(getApplicationContext(),PlayList.class);
+                startActivity(intent);
 
             }
         });
