@@ -49,4 +49,5 @@ public class customSwip extends PagerAdapter {
 
 
     }
-}
+
+
