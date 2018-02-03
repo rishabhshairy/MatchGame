@@ -2,8 +2,6 @@ package learn;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +11,7 @@ import com.example.rishabh.matchgame.R;
 
 public class customSwip extends PagerAdapter {
     private int[] resources={R.drawable.farmer,R.drawable.fireman,R.drawable.painter};
+
 
     private Context ctx;
     private LayoutInflater layoutInflater;
