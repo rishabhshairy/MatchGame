@@ -10,7 +10,17 @@ import android.widget.ImageView;
 import com.example.rishabh.matchgame.R;
 
 public class placesSwip extends PagerAdapter {
-    private int[] resources={};
+
+    private int[] resources={R.drawable.bank,
+            R.drawable.busstation,
+            R.drawable.library,
+            R.drawable.policestation,
+            R.drawable.school,
+            R.drawable.publicplaces,
+            R.drawable.playground,
+            R.drawable.postoffice,
+            R.drawable.restraunt,
+            R.drawable.supermarket};
 
 
     private Context ctx;
@@ -32,6 +42,7 @@ public class placesSwip extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+
         layoutInflater=(LayoutInflater)ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View itemView=layoutInflater.inflate(R.layout.custom_swip,container,false);
         ImageView imageView=(ImageView) itemView.findViewById(R.id.swip_image);
