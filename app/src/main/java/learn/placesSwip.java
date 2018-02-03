@@ -9,27 +9,14 @@ import android.widget.ImageView;
 
 import com.example.rishabh.matchgame.R;
 
-public class occupationSwip extends PagerAdapter {
-    private int[] resources={R.drawable.farmer,
-            R.drawable.fireman,
-            R.drawable.painter,
-            R.drawable.barber,
-            R.drawable.doctor,
-            R.drawable.cook,
-            R.drawable.electrician,
-            R.drawable.dc,
-            R.drawable.photographer,
-            R.drawable.pilot,
-            R.drawable.police,
-            R.drawable.postman,
-            R.drawable.sailor,
-            R.drawable.music};
+public class placesSwip extends PagerAdapter {
+    private int[] resources={};
 
 
     private Context ctx;
     private LayoutInflater layoutInflater;
 
-    public occupationSwip(Context c){
+    public placesSwip(Context c){
         ctx=c;
     }
 

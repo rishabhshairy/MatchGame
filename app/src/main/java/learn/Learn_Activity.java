@@ -24,8 +24,8 @@ public class Learn_Activity extends AppCompatActivity {
             case 0:break;
             case 1:break;
             case 2:occupation=new occupationSwip(this);
-          viewPager.setAdapter(occupation);
-          viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+              viewPager.setAdapter(occupation);
+              viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 

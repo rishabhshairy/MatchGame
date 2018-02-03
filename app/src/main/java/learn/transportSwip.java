@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import com.example.rishabh.matchgame.R;
 
-public class occupationSwip extends PagerAdapter {
+public class transportSwip extends PagerAdapter {
     private int[] resources={R.drawable.farmer,
             R.drawable.fireman,
             R.drawable.painter,
@@ -29,7 +29,7 @@ public class occupationSwip extends PagerAdapter {
     private Context ctx;
     private LayoutInflater layoutInflater;
 
-    public occupationSwip(Context c){
+    public transportSwip(Context c){
         ctx=c;
     }
 
