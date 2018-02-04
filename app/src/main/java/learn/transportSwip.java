@@ -10,20 +10,21 @@ import android.widget.ImageView;
 import com.example.rishabh.matchgame.R;
 
 public class transportSwip extends PagerAdapter {
-    private int[] resources={R.drawable.farmer,
-            R.drawable.fireman,
-            R.drawable.painter,
-            R.drawable.barber,
-            R.drawable.doctor,
-            R.drawable.cook,
-            R.drawable.electrician,
-            R.drawable.dc,
-            R.drawable.photographer,
-            R.drawable.pilot,
-            R.drawable.police,
-            R.drawable.postman,
-            R.drawable.sailor,
-            R.drawable.music};
+    private int[] resources={R.drawable.ambulance,
+            R.drawable.autorickshaw,
+            R.drawable.boat,
+            R.drawable.bus,
+            R.drawable.cycle,
+            R.drawable.firetruck,
+            R.drawable.helicopter,
+            R.drawable.horsecart,
+            R.drawable.jeep,
+            R.drawable.motorbike,
+            R.drawable.motorboat,
+            R.drawable.scooter,
+            R.drawable.ship,
+            R.drawable.taxi,
+            R.drawable.train};
 
 
     private Context ctx;
