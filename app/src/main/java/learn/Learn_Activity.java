@@ -30,7 +30,60 @@ public class Learn_Activity extends AppCompatActivity {
         i=intent.getIntExtra("choice",0);
         switch (i)
         {
-            case 0:break;
+            //ANIMALS
+            case 0:
+                animals=new animalSwip(this);
+                viewPager.setAdapter(animals);
+                animals.notifyDataSetChanged();
+                imageText=(TextView)findViewById(R.id.imageText);
+                imageText.setVisibility(View.VISIBLE);
+                imageText.setText("This is a bird");
+                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+
+                        switch (position)
+                        {
+                            case 0:imageText.setText("This is a bird");
+                                break;
+                            case 1:imageText.setText("This is a cat");
+                                break;
+                            case 2:imageText.setText("This is a dog");
+                                break;
+                            case 3:imageText.setText("This is a elephant");
+                                break;
+                            case 4:imageText.setText("This is a giraffe");
+                                break;
+                            case 5:imageText.setText("This is a horse");
+                                break;
+                            case 6:imageText.setText("This is a lion");
+                                break;
+                            case 7:imageText.setText("This is a mice");
+                                break;
+                            case 8:imageText.setText("This is a panda");
+                                break;
+                            case 9:imageText.setText("This is a rabbit");
+                                break;
+                            case 10:imageText.setText("This is a tiger");
+                                break;
+
+
+                        }
+                    }
+
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+
+                    }
+                });
+
+                break;
             //places
             /*
             ------------------------------
@@ -106,6 +159,7 @@ public class Learn_Activity extends AppCompatActivity {
                 switch (position)
                 {
 
+
                 }
             }
 
@@ -117,8 +171,68 @@ public class Learn_Activity extends AppCompatActivity {
         });
                 break;
 
+                //TRANSPORT
 
-            case 3:break;
+            case 3:
+                transport=new transportSwip(this);
+                viewPager.setAdapter(transport);
+                transport.notifyDataSetChanged();
+                imageText=(TextView)findViewById(R.id.imageText);
+                imageText.setVisibility(View.VISIBLE);
+                imageText.setText("This is a ambulance");
+                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+
+                        switch (position)
+                        {
+                            case 0:imageText.setText("ambulance");
+                                break;
+                            case 1:imageText.setText("autorickshaw");
+                                break;
+                            case 2:imageText.setText("boat");
+                                break;
+                            case 3:imageText.setText("bus");
+                                break;
+                            case 4:imageText.setText("cycle");
+                                break;
+                            case 5:imageText.setText("firetruck");
+                                break;
+                            case 6:imageText.setText("helicopter");
+                                break;
+                            case 7:imageText.setText("horsecart");
+                                break;
+                            case 8:imageText.setText("jeep");
+                                break;
+                            case 9:imageText.setText("motorbike");
+                                break;
+                            case 10:imageText.setText("motorboat");
+                                break;
+                            case 11:imageText.setText("scooter");
+                                break;
+                            case 12:imageText.setText("ship");
+                                break;
+                            case 13:imageText.setText("taxi");
+                                break;
+                            case 14:imageText.setText("train");
+                                break;
+
+
+                        }
+                    }
+
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+
+                    }
+                });
+                break;
         }
 
     }

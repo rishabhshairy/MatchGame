@@ -57,7 +57,7 @@
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:paddingTop="7dp"
-            android:src="@drawable/cat" />
+            android:src="@drawable/cat1" />
 
         <ImageView
             android:tag="elephant"
