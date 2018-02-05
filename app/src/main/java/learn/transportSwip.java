@@ -10,7 +10,8 @@ import android.widget.ImageView;
 import com.example.rishabh.matchgame.R;
 
 public class transportSwip extends PagerAdapter {
-    private int[] resources={R.drawable.ambulance,
+    private int[] resources={
+            R.drawable.ambulance,
             R.drawable.autorickshaw,
             R.drawable.boat,
             R.drawable.bus,

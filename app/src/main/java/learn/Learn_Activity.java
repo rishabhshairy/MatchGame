@@ -67,10 +67,11 @@ public class Learn_Activity extends AppCompatActivity {
                                 break;
                             case 8:imageText.setText("This is a panda");
                                 break;
-                            case 9:imageText.setText("This is a rabbit");
+                            case 9:imageText.setText("This is a Polar bear");
                                 break;
-                            case 10:imageText.setText("This is a tiger");
+                            case 10:imageText.setText("This is a rabbit");
                                 break;
+                            case 11:imageText.setText("This is a tiger");
 
 
                         }
@@ -191,35 +192,35 @@ public class Learn_Activity extends AppCompatActivity {
 
                         switch (position)
                         {
-                            case 0:imageText.setText("ambulance");
+                            case 0:imageText.setText("Ambulance");
                                 break;
-                            case 1:imageText.setText("autorickshaw");
+                            case 1:imageText.setText("Autorickshaw");
                                 break;
-                            case 2:imageText.setText("boat");
+                            case 2:imageText.setText("Boat");
                                 break;
-                            case 3:imageText.setText("bus");
+                            case 3:imageText.setText("Bus");
                                 break;
-                            case 4:imageText.setText("cycle");
+                            case 4:imageText.setText("Cycle");
                                 break;
-                            case 5:imageText.setText("firetruck");
+                            case 5:imageText.setText("Firetruck");
                                 break;
-                            case 6:imageText.setText("helicopter");
+                            case 6:imageText.setText("Helicopter");
                                 break;
-                            case 7:imageText.setText("horsecart");
+                            case 7:imageText.setText("Horsecart");
                                 break;
-                            case 8:imageText.setText("jeep");
+                            case 8:imageText.setText("Jeep");
                                 break;
-                            case 9:imageText.setText("motorbike");
+                            case 9:imageText.setText("Motorbike");
                                 break;
-                            case 10:imageText.setText("motorboat");
+                            case 10:imageText.setText("Motorboat");
                                 break;
-                            case 11:imageText.setText("scooter");
+                            case 11:imageText.setText("Scooter");
                                 break;
-                            case 12:imageText.setText("ship");
+                            case 12:imageText.setText("Ship");
                                 break;
-                            case 13:imageText.setText("taxi");
+                            case 13:imageText.setText("Taxi");
                                 break;
-                            case 14:imageText.setText("train");
+                            case 14:imageText.setText("Train");
                                 break;
 
 

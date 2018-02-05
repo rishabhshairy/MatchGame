@@ -10,8 +10,9 @@ import android.widget.ImageView;
 import com.example.rishabh.matchgame.R;
 
 public class animalSwip extends PagerAdapter {
-    private int[] resources={R.drawable.bird,
-                             R.drawable.cat1,
+    private int[] resources={
+            R.drawable.bird,
+            R.drawable.cat1,
             R.drawable.dog,
             R.drawable.elephants,
             R.drawable.giraffe,
