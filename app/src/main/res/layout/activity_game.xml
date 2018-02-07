@@ -1,182 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a1db7d"
-    android:orientation="horizontal"
+    android:orientation="vertical"
+    android:background="#F3E5F5"
     tools:context="com.example.rishabh.matchgame.GameActivity">
 
-    <!-- <TextView
-        android:id="@+id/finalText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:fontFamily="casual"
-        android:includeFontPadding="false"
-        android:text="Congratulations you matched all correctly"
-        android:textColor="@android:color/black"
+    <android.support.v7.widget.CardView
         android:visibility="invisible"
-        android:textSize="50sp" />-->
-
-    <LinearLayout
-        android:id="@+id/gridLayout"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20sp"
+        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="-3"
-        android:orientation="vertical"
-        android:padding="5dp"
-        android:visibility="visible">
+        android:layout_height="wrap_content">
+        <Button
+        android:textSize="25dp"
+        android:text="NEXT"
+        android:layout_centerInParent="true"
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+
+
+<GridLayout
+    android:id="@+id/grid1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_row="0"
+        android:layout_rowSpan="1"
+        android:clipToPadding="true"
+        app:cardBackgroundColor="#E1BEE7"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="16dp"
+        app:contentPadding="15sp">
 
         <ImageView
-            android:id="@+id/option1"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:layout_weight="1"
             android:src="@drawable/bird"
-            android:tag="bird" />
-
-        <ImageView
-            android:id="@+id/option2"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:layout_gravity="left"
-            android:layout_weight="1"
-            android:adjustViewBounds="false"
-            android:src="@drawable/lion"
-            android:tag="lion" />
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_column="1"
+        android:layout_columnSpan="1"
+        android:layout_marginStart="10dp"
+        android:layout_row="0"
+        android:layout_rowSpan="1"
+        android:layout_rowWeight="1"
+        app:cardBackgroundColor="#E0F7FA"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="16dp"
+        app:contentPadding="15sp"
+        tools:ignore="RtlCompat">
 
         <ImageView
-            android:id="@+id/option3"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:src="@drawable/cat1"
-            android:tag="cat" />
-
-        <ImageView
-            android:id="@+id/option4"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:src="@drawable/elephant"
-            android:tag="elephant" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:visibility="visible">
-
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_gravity="fill"
+            android:src="@drawable/elephant" />
+    </android.support.v7.widget.CardView>
 
-            <ImageView
-                android:id="@+id/answerImage"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_below="@id/gridLayout"
-                android:layout_weight="0.8"
-                android:background="@android:color/background_light"
-                android:fadingEdge="none"
-                android:tag="bird" />
 
-            <TextView
-                android:id="@+id/answerText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Bird"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="30sp" />
-        </LinearLayout>
+    <android.support.v7.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_row="2"
+        android:layout_rowSpan="1"
+        android:layout_rowWeight="1"
+        app:cardBackgroundColor="#C5CAE9"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="16dp"
+        app:contentPadding="15sp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_gravity="fill"
+            android:src="@drawable/lion" />
+    </android.support.v7.widget.CardView>
 
-            <ImageView
-                android:id="@+id/answerImage1"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_below="@id/gridLayout"
-                android:layout_weight="0.9"
-                android:background="#d1dee1"
-                android:tag="cat" />
+    <android.support.v4.widget.Space
+        android:layout_height="15dp"
+        android:layout_width="match_parent"
+        android:layout_row="1" />
 
-            <TextView
-                android:id="@+id/answerText1"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Cat"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="30sp" />
 
-        </LinearLayout>
+    <android.support.v7.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_column="1"
+        android:layout_columnSpan="1"
+        android:layout_marginStart="10dp"
+        android:layout_row="2"
+        android:layout_rowSpan="1"
+        android:layout_rowWeight="1"
+        app:cardBackgroundColor="#B2DFDB"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="16dp"
+        app:contentPadding="15sp"
+        tools:ignore="RtlCompat">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:src="@drawable/panda" />
+    </android.support.v7.widget.CardView>
+
+
+</GridLayout>
+
+    <!--for answer layout-->
+
+    <GridLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/grid2"
+        android:layout_below="@id/grid1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:background="#FFE082"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_width="200dp"
+            android:layout_height="135dp"
+            >
+        <ImageView
+
             android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/answerImage2"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_below="@id/gridLayout"
-                android:layout_weight="0.9"
-                android:background="@android:color/holo_red_light"
-                android:tag="elephant" />
-
-            <TextView
-                android:id="@+id/answerText2"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Elephant"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="25sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_gravity="top"
+            android:id="@+id/answer1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/answerImage3"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_below="@id/gridLayout"
-                android:layout_weight="0.9"
-                android:background="@color/darkPurple"
-                android:tag="lion" />
+            />
 
             <TextView
-                android:id="@+id/answerText3"
-                android:layout_width="95dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:text="Lion"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="30sp" />
-        </LinearLayout>
-    </LinearLayout>
+                android:textSize="25sp"
+                tools:text="Hello" />
 
 
-</LinearLayout>
+        </RelativeLayout>
+
+          <RelativeLayout
+              android:background="#CCFF90"
+            android:layout_row="0"
+            android:layout_column="1"
+              android:layout_gravity="end"
+            android:layout_width="200dp"
+            android:layout_height="135dp"
+            >
+
+              <ImageView
+
+            android:layout_weight="1"
+            android:layout_gravity="top"
+            android:id="@+id/answer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+            <TextView
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                tools:text="Hello" />
+
+
+        </RelativeLayout>
+
+          <RelativeLayout
+              android:layout_gravity="bottom"
+              android:background="#B2EBF2"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_width="200dp"
+            android:layout_height="135dp">
+
+              <ImageView
+
+            android:layout_weight="1"
+            android:layout_gravity="top"
+            android:id="@+id/answer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+            <TextView
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                tools:text="Hello" />
+
+        </RelativeLayout>
+          <RelativeLayout
+              android:layout_gravity="end|bottom"
+              android:background="#F8BBD0"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_width="200dp"
+            android:layout_height="135dp">
+
+              <ImageView
+
+            android:layout_weight="1"
+            android:layout_gravity="top"
+            android:id="@+id/answer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+            <TextView
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                tools:text="Hello" />
+
+        </RelativeLayout>
+    </GridLayout>
+
+
+</RelativeLayout>
