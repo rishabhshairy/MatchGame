@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#a1db7d"
+    android:orientation="horizontal"
     tools:context="com.example.rishabh.matchgame.GameActivity">
 
-    <TextView
+    <!-- <TextView
         android:id="@+id/finalText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,153 +18,165 @@
         android:text="Congratulations you matched all correctly"
         android:textColor="@android:color/black"
         android:visibility="invisible"
-        android:textSize="50sp" />
-
-    <GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:padding="5dp">
-
-        <ImageView
-            android:tag="bird"
-            android:id="@+id/option1"
-            android:layout_width="24dp"
-            android:layout_height="32dp"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:src="@drawable/bird" />
-
-        <ImageView
-            android:tag="lion"
-            android:id="@+id/option2"
-            android:layout_width="24dp"
-            android:layout_height="32dp"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:src="@drawable/lion" />
-
-        <ImageView
-            android:tag="cat"
-            android:id="@+id/option3"
-            android:layout_width="24dp"
-            android:layout_height="32dp"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            android:paddingTop="7dp"
-            android:src="@drawable/cat1" />
-
-        <ImageView
-            android:tag="elephant"
-            android:id="@+id/option4"
-            android:layout_width="24dp"
-            android:layout_height="32dp"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            android:paddingTop="7dp"
-            android:src="@drawable/elephant" />
-    </GridLayout>
-
-
-<LinearLayout
-    android:id="@+id/answerLinear"
-    android:layout_below="@id/gridLayout"
-    android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:layout_height="200dp">
-
-    <ImageView
-        android:tag="bird"
-        android:id="@+id/answerImage"
-        android:layout_width="95dp"
-        android:layout_height="match_parent"
-        android:layout_below="@id/gridLayout"
-        android:background="@android:color/background_light"
-        android:fadingEdge="none" />
-
-    <ImageView
-        android:tag="cat"
-        android:id="@+id/answerImage1"
-        android:layout_width="95dp"
-        android:layout_height="match_parent"
-        android:layout_below="@id/gridLayout"
-        android:background="#d1dee1" />
-
-    <ImageView
-        android:tag="elephant"
-        android:id="@+id/answerImage2"
-        android:layout_width="95dp"
-        android:layout_height="match_parent"
-        android:layout_below="@id/gridLayout"
-        android:background="#eaf5f4" />
-
-    <ImageView
-        android:tag="lion"
-        android:id="@+id/answerImage3"
-        android:layout_width="95dp"
-        android:layout_height="match_parent"
-        android:layout_below="@id/gridLayout"
-        android:background="#afe7e3" />
-</LinearLayout>
+        android:textSize="50sp" />-->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_below="@id/answerLinear"
-        android:gravity="center"
-        android:background="@android:color/holo_green_light"
-        android:orientation="horizontal">
+        android:layout_weight="-3"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:visibility="visible">
 
-        <TextView
-            android:id="@+id/answerText"
-            android:textAlignment="center"
-            android:layout_width="95dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/answerLinear"
-            android:layout_centerInParent="true"
-            android:text="Bird"
-            android:textColor="@android:color/black"
-            android:textSize="30sp" />
+        <ImageView
+            android:id="@+id/option1"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:src="@drawable/bird"
+            android:tag="bird" />
 
-         <TextView
-            android:id="@+id/answerText1"
-            android:textAlignment="center"
-            android:layout_width="95dp"
+        <ImageView
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:adjustViewBounds="false"
+            android:src="@drawable/lion"
+            android:tag="lion" />
+
+        <ImageView
+            android:id="@+id/option3"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:src="@drawable/cat1"
+            android:tag="cat" />
+
+        <ImageView
+            android:id="@+id/option4"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:src="@drawable/elephant"
+            android:tag="elephant" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/answerLinear"
-            android:layout_centerInParent="true"
-            android:text="Cat"
-            android:textColor="@android:color/black"
-            android:textSize="30sp" />
-        <TextView
-            android:id="@+id/answerText2"
-            android:textAlignment="center"
-            android:layout_width="100dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/answerImage"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_below="@id/gridLayout"
+                android:layout_weight="0.8"
+                android:background="@android:color/background_light"
+                android:fadingEdge="none"
+                android:tag="bird" />
+
+            <TextView
+                android:id="@+id/answerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Bird"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/answerLinear"
-            android:layout_centerInParent="true"
-            android:text="Elephant"
-            android:textColor="@android:color/black"
-            android:textSize="25sp" />
-        <TextView
-            android:id="@+id/answerText3"
-            android:textAlignment="center"
-            android:layout_width="95dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/answerImage1"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_below="@id/gridLayout"
+                android:layout_weight="0.9"
+                android:background="#d1dee1"
+                android:tag="cat" />
+
+            <TextView
+                android:id="@+id/answerText1"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Cat"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/answerLinear"
-            android:layout_centerInParent="true"
-            android:text="Lion"
-            android:textColor="@android:color/black"
-            android:textSize="30sp" />
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/answerImage2"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_below="@id/gridLayout"
+                android:layout_weight="0.9"
+                android:background="@android:color/holo_red_light"
+                android:tag="elephant" />
+
+            <TextView
+                android:id="@+id/answerText2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Elephant"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/answerImage3"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_below="@id/gridLayout"
+                android:layout_weight="0.9"
+                android:background="@color/darkPurple"
+                android:tag="lion" />
+
+            <TextView
+                android:id="@+id/answerText3"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Lion"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="30sp" />
+        </LinearLayout>
     </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
