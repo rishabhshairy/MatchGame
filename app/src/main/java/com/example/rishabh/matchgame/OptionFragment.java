@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import play.GameActivity;
+
 /**
  * Created by Rishabh on 1/23/2018.
  */
@@ -32,7 +34,8 @@ public class OptionFragment extends AppCompatActivity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            Intent intent=new Intent(getApplicationContext(),GameActivity.class);
+            startActivity(intent);
 
             }
         });
