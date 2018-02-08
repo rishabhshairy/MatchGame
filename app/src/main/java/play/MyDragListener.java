@@ -17,10 +17,9 @@ import com.example.rishabh.matchgame.R;
 public class MyDragListener implements View.OnDragListener {
 
     private Context context;
-
+    ImageView drag1,drag2,drag3,drag4;
     GridLayout g1,g2;
     CardView cardView;
-    int i=0;
     public MyDragListener(Context c) {
         this.context=c;
     }
@@ -32,9 +31,14 @@ public class MyDragListener implements View.OnDragListener {
 
     @Override
     public boolean onDrag(View view, DragEvent motionEvent) {
+        int i=0;
         g1=(GridLayout)view.findViewById(R.id.grid1);
         g2=(GridLayout)view.findViewById(R.id.grid2);
         cardView=(CardView)view.findViewById(R.id.buttonCard);
+        drag1=(ImageView)view.findViewById(R.id.drag1);
+        drag2=(ImageView)view.findViewById(R.id.drag2);
+        drag3=(ImageView)view.findViewById(R.id.drag3);
+        drag4=(ImageView)view.findViewById(R.id.drag4);
         int k=motionEvent.getAction();
         switch (k)
         {
@@ -50,16 +54,10 @@ public class MyDragListener implements View.OnDragListener {
                         ImageView option=(ImageView)v;
 
                         if (droptarget.getTag().toString().equals(option.getTag().toString()))
-                        {   i++;
+                        {
                             droptarget.setImageDrawable(option.getDrawable());
                             option.setVisibility(View.GONE);
                             showToast("correct!!");
-                            if (i==4)
-                            {
-                                g1.setVisibility(View.INVISIBLE);
-                                g2.setVisibility(View.INVISIBLE);
-                                cardView.setVisibility(View.VISIBLE);
-                            }
 
                         }
                         else
@@ -73,4 +71,5 @@ public class MyDragListener implements View.OnDragListener {
         }
          return true;
     }
+
 }

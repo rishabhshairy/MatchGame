@@ -1,5 +1,6 @@
 package com.example.rishabh.matchgame;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import play.GameActivity;
 
 public class PlayList extends AppCompatActivity {
     ListView listView;
@@ -23,10 +26,10 @@ public class PlayList extends AppCompatActivity {
         listView.getBackground().setAlpha(30);
         //inflating array list
         list=new ArrayList<String>();
-        list.add("Animals");
-        list.add("Occupation");
-        list.add("Transportation");
-        list.add("Public Places");
+        list.add("Animals");//0
+        list.add("Occupation");//1
+        list.add("Transportation");//2
+        list.add("Public Places");//3
         //setting adapter
         arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(arrayAdapter);
@@ -36,7 +39,37 @@ public class PlayList extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int i;
+                switch (position)
+                {
+                    case 0:
+                        i=0;
+                        Intent intent=new Intent(getApplicationContext(), GameActivity.class);
+                        intent.putExtra("choice",i);
+                        startActivity(intent);
+                        break;
 
+                    case 2:
+                        i=1;
+                        Intent intent1=new Intent(getApplicationContext(), GameActivity.class);
+                        intent1.putExtra("choice",i);
+                        startActivity(intent1);
+                        break;
+
+                    case 3:
+                        i=2;
+                        Intent intent2=new Intent(getApplicationContext(), GameActivity.class);
+                        intent2.putExtra("choice",i);
+                        startActivity(intent2);
+                        break;
+
+                    case 4:i=3;
+                        Intent intent3=new Intent(getApplicationContext(), GameActivity.class);
+                        intent3.putExtra("choice",i);
+                        startActivity(intent3);
+                        break;
+
+                }
             }
         });
     }
