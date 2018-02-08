@@ -32,8 +32,7 @@ public class OptionFragment extends AppCompatActivity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),PlayList.class);
-                startActivity(intent);
+
 
             }
         });

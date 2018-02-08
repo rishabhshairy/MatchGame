@@ -10,7 +10,8 @@ import android.widget.ImageView;
 import com.example.rishabh.matchgame.R;
 
 public class occupationSwip extends PagerAdapter {
-    private int[] resources={R.drawable.farmer,
+    private int[] resources={
+            R.drawable.farmer,
             R.drawable.fireman,
             R.drawable.painter,
             R.drawable.barber,

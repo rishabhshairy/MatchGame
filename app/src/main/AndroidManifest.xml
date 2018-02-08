@@ -21,8 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OptionFragment" />
-        <activity android:name=".GameActivity" />
+        <activity android:name=".OptionFragment"
+            android:label="@string/option_name"/>
         <activity
             android:name=".LearnList"
             android:label="@string/learn_name"
@@ -34,6 +34,9 @@
         </activity>
         <activity android:name="learn.Learn_Activity"
             android:label="Learn Through Images"></activity>
+
+    <activity android:name="play.GameActivity"></activity>
     </application>
+
 
 </manifest>

@@ -6,4 +6,19 @@
 
     <string name="learn_name">Learning Section</string>
     <string name="play_name">Game Section</string>
+    <string name="option_name">Your Choice</string>
+
+    <array name="animals">
+        <item >@drawable/cat</item>
+        <item >@drawable/dog</item>
+        <item >@drawable/bird</item>
+        <item >@drawable/lion</item>
+        <item >@drawable/panda</item>
+        <item >@drawable/elephant</item>
+        <item >@drawable/mice</item>
+        <item >@drawable/polarbear</item>
+        <item >@drawable/horse</item>
+        <item >@drawable/rabbit</item>
+        <item >@drawable/tiger</item>
+    </array>
 </resources>

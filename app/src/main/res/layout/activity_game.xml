@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F3E5F5"
-    tools:context="com.example.rishabh.matchgame.GameActivity">
+    tools:context="play.GameActivity">
 
     <android.support.v7.widget.CardView
         android:visibility="invisible"
@@ -44,6 +44,7 @@
         app:contentPadding="15sp">
 
         <ImageView
+            android:id="@+id/drag1"
             android:src="@drawable/bird"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -68,6 +69,7 @@
         tools:ignore="RtlCompat">
 
         <ImageView
+            android:id="@+id/drag2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="fill"
@@ -89,6 +91,7 @@
         app:contentPadding="15sp">
 
         <ImageView
+            android:id="@+id/drag3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="fill"
@@ -117,6 +120,7 @@
         tools:ignore="RtlCompat">
 
         <ImageView
+            android:id="@+id/drag4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="fill"
@@ -144,7 +148,6 @@
             android:layout_height="135dp"
             >
         <ImageView
-
             android:layout_weight="1"
             android:layout_gravity="top"
             android:id="@+id/answer1"

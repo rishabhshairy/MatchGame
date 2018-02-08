@@ -11,7 +11,8 @@ import com.example.rishabh.matchgame.R;
 
 public class placesSwip extends PagerAdapter {
 
-    private int[] resources={R.drawable.bank,
+    private int[] resources={
+            R.drawable.bank,
             R.drawable.busstation,
             R.drawable.library,
             R.drawable.policestation,
