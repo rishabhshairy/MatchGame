@@ -10,6 +10,7 @@
 
     <android.support.v7.widget.CardView
         android:visibility="invisible"
+        android:id="@+id/buttonCard"
         app:cardCornerRadius="15dp"
         app:cardElevation="20sp"
         android:layout_centerInParent="true"
@@ -148,11 +149,12 @@
             <ImageView
                 android:id="@+id/answer1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="top"
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/answerText1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -179,11 +181,12 @@
 
                 android:id="@+id/answer2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="top"
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/answerText2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -208,11 +211,12 @@
 
                 android:id="@+id/answer3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="top"
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/answerText3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -238,11 +242,12 @@
 
                 android:id="@+id/answer4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="top"
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/answerText4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
