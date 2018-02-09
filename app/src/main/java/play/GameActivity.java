@@ -31,16 +31,16 @@ public class GameActivity extends AppCompatActivity {
     private ImageView[] options;
     private ImageView[] answers;
     private TextView[] answerTexts;
-    int j;
+    int j,i;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        Intent intent=getIntent();
+        final Intent intent=getIntent();
         /*
         Getting choice from previous activity
          */
-        int i=intent.getIntExtra("choice",0);
+        i=intent.getIntExtra("choice",0);
         options=new ImageView[4];
         answerTexts=new TextView[4];
         answers=new ImageView[4];
@@ -123,9 +123,8 @@ public class GameActivity extends AppCompatActivity {
                 g1.setVisibility(View.VISIBLE);
                 g2.setVisibility(View.VISIBLE);
                 cardView.setVisibility(View.INVISIBLE);
-
             }
-        });
+                    });
 
     }
     /*
@@ -628,15 +627,62 @@ public class GameActivity extends AppCompatActivity {
                       answerTexts[d].setText(PlacesList.placetags2[d]);
                       break;
                   }
-                   a=random.nextInt(4);
-              b=random.nextInt(4);
-              c=random.nextInt(4);
-              d=random.nextInt(4);
-              }
+                  a=random.nextInt(4);
+                  b=random.nextInt(4);
+                  c=random.nextInt(4);
+                  d=random.nextInt(4);
+                  }
 
               break;
 
       }
+  }
+
+  public void imageReset()
+  {
+         Random  random=new Random();
+        int a,b,c,d;
+        a=random.nextInt(4);
+        b=random.nextInt(4);
+        c =random.nextInt(4);
+        d=random.nextInt(4);
+        //setting random images
+        while (true){
+            if(a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a)
+            {
+                options[a]=(ImageView)findViewById(R.id.drag1);
+                options[b]=(ImageView)findViewById(R.id.drag2);
+                options[c]=(ImageView)findViewById(R.id.drag3);
+                options[d]=(ImageView)findViewById(R.id.drag4);
+
+                answers[a]=findViewById(R.id.answer2);
+              answers[b]=findViewById(R.id.answer1);
+              answers[c]=findViewById(R.id.answer4);
+              answers[d]=findViewById(R.id.answer3);
+
+              answerTexts[a]=(TextView)findViewById(R.id.answerText2);
+              answerTexts[b]=(TextView)findViewById(R.id.answerText1);
+              answerTexts[c]=(TextView)findViewById(R.id.answerText4);
+              answerTexts[d]=(TextView)findViewById(R.id.answerText3);
+
+              options[a].setImageResource(0);
+              options[b].setImageResource(0);
+              options[c].setImageResource(0);
+              options[d].setImageResource(0);
+
+              answers[a].setImageResource(0);
+              answers[b].setImageResource(0);
+              answers[c].setImageResource(0);
+              answers[d].setImageResource(0);
+
+
+                break;
+            }
+            a=random.nextInt(4);
+            b=random.nextInt(4);
+            c =random.nextInt(4);
+            d=random.nextInt(4);
+        }
   }
 
   //custom class for drag listener
@@ -669,8 +715,7 @@ public class GameActivity extends AppCompatActivity {
                                 drag4.getVisibility()==View.GONE) {
                                     g1.setVisibility(View.INVISIBLE);
                                       g2.setVisibility(View.INVISIBLE);
-                                    cardView.setVisibility(View.VISIBLE);
-                                }
+                                    cardView.setVisibility(View.VISIBLE);}
 
                         }
                         else
