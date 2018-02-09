@@ -39,7 +39,7 @@ public class PlayList extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int i;
+                int i=0;
                 switch (position)
                 {
                     case 0:
@@ -49,21 +49,22 @@ public class PlayList extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case 2:
+                    case 1:
                         i=1;
                         Intent intent1=new Intent(getApplicationContext(), GameActivity.class);
                         intent1.putExtra("choice",i);
                         startActivity(intent1);
                         break;
 
-                    case 3:
+                    case 2:
                         i=2;
                         Intent intent2=new Intent(getApplicationContext(), GameActivity.class);
                         intent2.putExtra("choice",i);
                         startActivity(intent2);
                         break;
 
-                    case 4:i=3;
+                    case 3:
+                        i=3;
                         Intent intent3=new Intent(getApplicationContext(), GameActivity.class);
                         intent3.putExtra("choice",i);
                         startActivity(intent3);

@@ -4,10 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.view.DragEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rishabh.matchgame.R;
 
@@ -21,6 +26,8 @@ public class GameActivity extends AppCompatActivity {
     ImageView drag1,drag2,drag3,drag4,answer1,answer2,answer3,answer4;
     TextView answerText1,answerText2,answerText3,answerText4;
     GridLayout g1,g2;
+    CardView cardView;
+    Button nextButton;
     private ImageView[] options;
     private ImageView[] answers;
     private TextView[] answerTexts;
@@ -30,27 +37,14 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         Intent intent=getIntent();
+        /*
+        Getting choice from previous activity
+         */
         int i=intent.getIntExtra("choice",0);
         options=new ImageView[4];
         answerTexts=new TextView[4];
         answers=new ImageView[4];
-        Random random=new Random();
-        switch (i)
-        {
-            case 0:j=random.nextInt(3);
-                setAnimal(j);
-
-                break;
-
-            case 1:
-                break;
-
-            case 3:
-                break;
-
-            case 4:
-                break;
-        }
+        final Random random=new Random();
 
 
        //image view  for quiz
@@ -87,37 +81,91 @@ public class GameActivity extends AppCompatActivity {
 
         g1=(GridLayout)findViewById(R.id.grid1);
         g2=(GridLayout)findViewById(R.id.grid2);
+        cardView=(CardView)findViewById(R.id.buttonCard);
 
         drag1.setOnTouchListener(new MyOnTouchListener());
         drag2.setOnTouchListener(new MyOnTouchListener());
         drag3.setOnTouchListener(new MyOnTouchListener());
         drag4.setOnTouchListener(new MyOnTouchListener());
 
-        answer1.setOnDragListener(new MyDragListener(this));
-        answer2.setOnDragListener(new MyDragListener(this));
-        answer3.setOnDragListener(new MyDragListener(this));
-        answer4.setOnDragListener(new MyDragListener(this));
+        answer1.setOnDragListener(new MyDragListener());
+        answer2.setOnDragListener(new MyDragListener());
+        answer3.setOnDragListener(new MyDragListener());
+        answer4.setOnDragListener(new MyDragListener());
+
+        nextButton=(Button)findViewById(R.id.nextButton);
+
+        switch (i)
+        {
+            case 0:j=random.nextInt(3);
+                setAnimal(j);
+                break;
+
+            case 1:j=random.nextInt(3);
+                setOccupation(j);
+                break;
+
+            case 2:j=random.nextInt(3);
+                setTransport(j);
+                break;
+
+            case 3:j=random.nextInt(3);
+                setPlaces(j);
+                break;
+        }
+
+        /*
+        Setting Actions for next button
+         */
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                g1.setVisibility(View.VISIBLE);
+                g2.setVisibility(View.VISIBLE);
+                cardView.setVisibility(View.INVISIBLE);
+
+            }
+        });
+
     }
+    /*
+    Set Animals for quiz
+     */
 
   private void setAnimal(int i)
-  {
-      options[0]=(ImageView)findViewById(R.id.drag1);
-      options[1]=(ImageView)findViewById(R.id.drag2);
-      options[2]=(ImageView)findViewById(R.id.drag3);
-      options[3]=(ImageView)findViewById(R.id.drag4);
-
-      answers[0]=findViewById(R.id.answer2);
-      answers[1]=findViewById(R.id.answer1);
-      answers[2]=findViewById(R.id.answer4);
-      answers[3]=findViewById(R.id.answer3);
-
-      answerTexts[0]=(TextView)findViewById(R.id.answerText2);
-      answerTexts[1]=(TextView)findViewById(R.id.answerText1);
-      answerTexts[2]=(TextView)findViewById(R.id.answerText4);
-      answerTexts[3]=(TextView)findViewById(R.id.answerText3);
-      int k;
+  {     Random  random=new Random();
+        int k;
         int a,b,c,d;
-        Random  random=new Random();
+        a=random.nextInt(4);
+        b=random.nextInt(4);
+        c =random.nextInt(4);
+        d=random.nextInt(4);
+        //setting random images
+        while (true){
+            if(a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a)
+            {
+                options[a]=(ImageView)findViewById(R.id.drag1);
+                options[b]=(ImageView)findViewById(R.id.drag2);
+                options[c]=(ImageView)findViewById(R.id.drag3);
+                options[d]=(ImageView)findViewById(R.id.drag4);
+
+                answers[a]=findViewById(R.id.answer2);
+              answers[b]=findViewById(R.id.answer1);
+              answers[c]=findViewById(R.id.answer4);
+              answers[d]=findViewById(R.id.answer3);
+
+              answerTexts[a]=(TextView)findViewById(R.id.answerText2);
+              answerTexts[b]=(TextView)findViewById(R.id.answerText1);
+              answerTexts[c]=(TextView)findViewById(R.id.answerText4);
+              answerTexts[d]=(TextView)findViewById(R.id.answerText3);
+                break;
+            }
+            a=random.nextInt(4);
+            b=random.nextInt(4);
+            c =random.nextInt(4);
+            d=random.nextInt(4);
+        }
+
       switch (i){
           case 0:
               for (int m=0;m<4;m++)
@@ -215,20 +263,433 @@ public class GameActivity extends AppCompatActivity {
               break;
       }
   }
-  private void setOccupation()
+  /*
+  Set Occupation for Images in Quiz
+   */
+  private void setOccupation(int i)
+  {
+    Random  random=new Random();
+        int k;
+        int a,b,c,d;
+        a=random.nextInt(4);
+        b=random.nextInt(4);
+        c =random.nextInt(4);
+        d=random.nextInt(4);
+        //setting random images
+        while (true){
+            if(a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a)
+            {
+                options[a]=(ImageView)findViewById(R.id.drag1);
+                options[b]=(ImageView)findViewById(R.id.drag2);
+                options[c]=(ImageView)findViewById(R.id.drag3);
+                options[d]=(ImageView)findViewById(R.id.drag4);
+
+                answers[a]=findViewById(R.id.answer2);
+              answers[b]=findViewById(R.id.answer1);
+              answers[c]=findViewById(R.id.answer4);
+              answers[d]=findViewById(R.id.answer3);
+
+              answerTexts[a]=(TextView)findViewById(R.id.answerText2);
+              answerTexts[b]=(TextView)findViewById(R.id.answerText1);
+              answerTexts[c]=(TextView)findViewById(R.id.answerText4);
+              answerTexts[d]=(TextView)findViewById(R.id.answerText3);
+                break;
+            }
+            a=random.nextInt(4);
+            b=random.nextInt(4);
+            c =random.nextInt(4);
+            d=random.nextInt(4);
+        }
+      switch (i){
+          case 0:
+              for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(OccupationList.occupationList[m]);
+                  options[m].setTag(OccupationList.occtags[m]);
+              }
+              a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a){
+                      answers[a].setTag(OccupationList.occtags[a]);
+                      answerTexts[a].setText(OccupationList.occtags[a]);
+                      answers[b].setTag(OccupationList.occtags[b]);
+                      answerTexts[b].setText(OccupationList.occtags[b]);
+                      answers[c].setTag(OccupationList.occtags[c]);
+                      answerTexts[c].setText(OccupationList.occtags[c]);
+                      answers[d].setTag(OccupationList.occtags[d]);
+                      answerTexts[d].setText(OccupationList.occtags[d]);
+                      break;
+                  }
+                a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              }
+              break;
+          case 1:
+
+               for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(OccupationList.occupationList1[m]);
+                  options[m].setTag(OccupationList.occtags2[m]);
+              }
+              a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a){
+                      answers[a].setTag(OccupationList.occtags2[a]);
+                      answerTexts[a].setText(OccupationList.occtags2[a]);
+                      answers[b].setTag(OccupationList.occtags2[b]);
+                      answerTexts[b].setText(OccupationList.occtags2[b]);
+                      answers[c].setTag(OccupationList.occtags2[c]);
+                      answerTexts[c].setText(OccupationList.occtags2[c]);
+                      answers[d].setTag(OccupationList.occtags2[d]);
+                      answerTexts[d].setText(OccupationList.occtags2[d]);
+                      break;
+                  }
+                   a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+              }
+
+              break;
+          case 2:
+                for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(OccupationList.occupationList2[m]);
+                  options[m].setTag(OccupationList.occtags3[m]);
+              }
+              b=random.nextInt(4);
+              a=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b && c!=a){
+                      Log.i("a",Integer.toString(a));
+                      Log.i("b",Integer.toString(b));
+                      Log.i("c",Integer.toString(c));
+                      Log.i("d",Integer.toString(d));
+                      answers[a].setTag(OccupationList.occtags3[a]);
+                      answerTexts[a].setText(OccupationList.occtags3[a]);
+                      answers[b].setTag(OccupationList.occtags3[b]);
+                      answerTexts[b].setText(OccupationList.occtags3[b]);
+                      answers[c].setTag(OccupationList.occtags3[c]);
+                      answerTexts[c].setText(OccupationList.occtags3[c]);
+                      answers[d].setTag(OccupationList.occtags3[d]);
+                      answerTexts[d].setText(OccupationList.occtags3[d]);
+                      break;
+                  }
+                  a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+              }
+              break;
+      }
+  }
+/*
+    Set Transport Images for Quiz
+ */
+  private void setTransport(int i)
   {
 
-  }
+      Random  random=new Random();
+        int k;
+        int a,b,c,d;
+        a=random.nextInt(4);
+        b=random.nextInt(4);
+        c =random.nextInt(4);
+        d=random.nextInt(4);
+        //setting random images
+        while (true){
+            if(a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a)
+            {
+                options[a]=(ImageView)findViewById(R.id.drag1);
+                options[b]=(ImageView)findViewById(R.id.drag2);
+                options[c]=(ImageView)findViewById(R.id.drag3);
+                options[d]=(ImageView)findViewById(R.id.drag4);
 
-  private void setTransport()
+                answers[a]=findViewById(R.id.answer2);
+              answers[b]=findViewById(R.id.answer1);
+              answers[c]=findViewById(R.id.answer4);
+              answers[d]=findViewById(R.id.answer3);
+
+              answerTexts[a]=(TextView)findViewById(R.id.answerText2);
+              answerTexts[b]=(TextView)findViewById(R.id.answerText1);
+              answerTexts[c]=(TextView)findViewById(R.id.answerText4);
+              answerTexts[d]=(TextView)findViewById(R.id.answerText3);
+                break;
+            }
+            a=random.nextInt(4);
+            b=random.nextInt(4);
+            c =random.nextInt(4);
+            d=random.nextInt(4);
+        }
+
+      switch (i){
+          case 0:
+              for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(TransportList.transList[m]);
+                  options[m].setTag(TransportList.transtags[m]);
+              }
+              a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a){
+                      answers[a].setTag(TransportList.transtags[a]);
+                      answerTexts[a].setText(TransportList.transtags[a]);
+                      answers[b].setTag(TransportList.transtags[b]);
+                      answerTexts[b].setText(TransportList.transtags[b]);
+                      answers[c].setTag(TransportList.transtags[c]);
+                      answerTexts[c].setText(TransportList.transtags[c]);
+                      answers[d].setTag(TransportList.transtags[d]);
+                      answerTexts[d].setText(TransportList.transtags[d]);
+                      break;
+                  }
+                a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              }
+              break;
+          case 1:
+
+               for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(TransportList.transList1[m]);
+                  options[m].setTag(TransportList.transtags2[m]);
+              }
+              a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a){
+                      answers[a].setTag(TransportList.transtags2[a]);
+                      answerTexts[a].setText(TransportList.transtags2[a]);
+                      answers[b].setTag(TransportList.transtags2[b]);
+                      answerTexts[b].setText(TransportList.transtags2[b]);
+                      answers[c].setTag(TransportList.transtags2[c]);
+                      answerTexts[c].setText(TransportList.transtags2[c]);
+                      answers[d].setTag(TransportList.transtags2[d]);
+                      answerTexts[d].setText(TransportList.transtags2[d]);
+                      break;
+                  }
+                   a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+              }
+
+              break;
+          case 2:
+                for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(TransportList.transList2[m]);
+                  options[m].setTag(TransportList.transtags3[m]);
+              }
+              b=random.nextInt(4);
+              a=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b && c!=a){
+                      Log.i("a",Integer.toString(a));
+                      Log.i("b",Integer.toString(b));
+                      Log.i("c",Integer.toString(c));
+                      Log.i("d",Integer.toString(d));
+                      answers[a].setTag(TransportList.transtags3[a]);
+                      answerTexts[a].setText(TransportList.transtags3[a]);
+                      answers[b].setTag(TransportList.transtags3[b]);
+                      answerTexts[b].setText(TransportList.transtags3[b]);
+                      answers[c].setTag(TransportList.transtags3[c]);
+                      answerTexts[c].setText(TransportList.transtags3[c]);
+                      answers[d].setTag(TransportList.transtags3[d]);
+                      answerTexts[d].setText(TransportList.transtags3[d]);
+                      break;
+                  }
+                  a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+              }
+              break;
+      }
+
+  }
+    /*
+    Set Public Places for Images View for quiz
+     */
+  private void setPlaces(int i)
   {
+          Random  random=new Random();
+        int k;
+        int a,b,c,d;
+        a=random.nextInt(4);
+        b=random.nextInt(4);
+        c =random.nextInt(4);
+        d=random.nextInt(4);
+        //setting random images
+        while (true){
+            if(a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a)
+            {
+                options[a]=(ImageView)findViewById(R.id.drag1);
+                options[b]=(ImageView)findViewById(R.id.drag2);
+                options[c]=(ImageView)findViewById(R.id.drag3);
+                options[d]=(ImageView)findViewById(R.id.drag4);
 
+                answers[a]=findViewById(R.id.answer2);
+              answers[b]=findViewById(R.id.answer1);
+              answers[c]=findViewById(R.id.answer4);
+              answers[d]=findViewById(R.id.answer3);
+
+              answerTexts[a]=(TextView)findViewById(R.id.answerText2);
+              answerTexts[b]=(TextView)findViewById(R.id.answerText1);
+              answerTexts[c]=(TextView)findViewById(R.id.answerText4);
+              answerTexts[d]=(TextView)findViewById(R.id.answerText3);
+                break;
+            }
+            a=random.nextInt(4);
+            b=random.nextInt(4);
+            c =random.nextInt(4);
+            d=random.nextInt(4);
+        }
+
+
+      switch (i){
+          case 0:
+              for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(PlacesList.placesList[m]);
+                  options[m].setTag(PlacesList.placetags[m]);
+              }
+              a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a){
+                      answers[a].setTag(PlacesList.placetags[a]);
+                      answerTexts[a].setText(PlacesList.placetags[a]);
+                      answers[b].setTag(PlacesList.placetags[b]);
+                      answerTexts[b].setText(PlacesList.placetags[b]);
+                      answers[c].setTag(PlacesList.placetags[c]);
+                      answerTexts[c].setText(PlacesList.placetags[c]);
+                      answers[d].setTag(PlacesList.placetags[d]);
+                      answerTexts[d].setText(PlacesList.placetags[d]);
+                      break;
+                  }
+                a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              }
+              break;
+          case 1:
+
+               for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(PlacesList.placesList1[m]);
+                  options[m].setTag(PlacesList.placetags2[m]);
+              }
+              a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a){
+                      answers[a].setTag(PlacesList.placetags2[a]);
+                      answerTexts[a].setText(PlacesList.placetags2[a]);
+                      answers[b].setTag(PlacesList.placetags2[b]);
+                      answerTexts[b].setText(PlacesList.placetags2[b]);
+                      answers[c].setTag(PlacesList.placetags2[c]);
+                      answerTexts[c].setText(PlacesList.placetags2[c]);
+                      answers[d].setTag(PlacesList.placetags2[d]);
+                      answerTexts[d].setText(PlacesList.placetags2[d]);
+                      break;
+                  }
+                   a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+              }
+
+              break;
+
+      }
   }
 
-  private void setPlaces()
-  {
+  //custom class for drag listener
+    public class MyDragListener implements View.OnDragListener {
 
-  }
+      @Override
+    public boolean onDrag(View view, DragEvent motionEvent) {
+        int k=motionEvent.getAction();
+        switch (k)
+        {
+                 case DragEvent.ACTION_DRAG_STARTED:
+                        return true;
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        View v=(View)motionEvent.getLocalState();
+                        ImageView droptarget=(ImageView) view;
+                        ImageView option=(ImageView)v;
+
+                        if (droptarget.getTag().toString().equals(option.getTag().toString()))
+                        {
+                            droptarget.setImageDrawable(option.getDrawable());
+                            option.setVisibility(View.GONE);
+                            Toast.makeText(GameActivity.this, "Correct!!", Toast.LENGTH_SHORT).show();
+                            if (drag1.getVisibility()==View.GONE&&
+                                drag2.getVisibility()==View.GONE&&
+                                drag3.getVisibility()==View.GONE&&
+                                drag4.getVisibility()==View.GONE) {
+                                    g1.setVisibility(View.INVISIBLE);
+                                      g2.setVisibility(View.INVISIBLE);
+                                    cardView.setVisibility(View.VISIBLE);
+                                }
+
+                        }
+                        else
+                        {
+                            Toast.makeText(GameActivity.this, "Incorrect Try Again!!", Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+
+                        break;
+                     default:break;
+        }
+         return true;
+    }
+
+
+
+}
+
 
 
 }

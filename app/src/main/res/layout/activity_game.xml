@@ -27,6 +27,7 @@
 
 
     <GridLayout
+        android:visibility="visible"
         android:id="@+id/grid1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -133,6 +134,7 @@
     <!--for answer layout-->
 
     <GridLayout
+        android:visibility="visible"
         android:padding="10dp"
         android:id="@+id/grid2"
         android:layout_width="match_parent"
