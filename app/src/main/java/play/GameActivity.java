@@ -41,6 +41,7 @@ public class GameActivity extends AppCompatActivity {
         Getting choice from previous activity
          */
         i=intent.getIntExtra("choice",0);
+
         options=new ImageView[4];
         answerTexts=new TextView[4];
         answers=new ImageView[4];
@@ -99,32 +100,77 @@ public class GameActivity extends AppCompatActivity {
         {
             case 0:j=random.nextInt(3);
                 setAnimal(j);
+                nextButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        j=random.nextInt(3);
+                        g1.setVisibility(View.VISIBLE);
+                        g2.setVisibility(View.VISIBLE);
+                        drag1.setVisibility(View.VISIBLE);
+                        drag2.setVisibility(View.VISIBLE);
+                        drag3.setVisibility(View.VISIBLE);
+                        drag4.setVisibility(View.VISIBLE);
+                        cardView.setVisibility(View.INVISIBLE);
+                        setAnimal(j);
+                    }
+                });
                 break;
 
             case 1:j=random.nextInt(3);
                 setOccupation(j);
+                nextButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        j=random.nextInt(3);
+                        g1.setVisibility(View.VISIBLE);
+                        g2.setVisibility(View.VISIBLE);
+                        drag1.setVisibility(View.VISIBLE);
+                        drag2.setVisibility(View.VISIBLE);
+                        drag3.setVisibility(View.VISIBLE);
+                        drag4.setVisibility(View.VISIBLE);
+                        cardView.setVisibility(View.INVISIBLE);
+                        setOccupation(j);
+                    }
+                });
                 break;
 
             case 2:j=random.nextInt(3);
                 setTransport(j);
+                nextButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        j=random.nextInt(3);
+                        g1.setVisibility(View.VISIBLE);
+                        g2.setVisibility(View.VISIBLE);
+                        drag1.setVisibility(View.VISIBLE);
+                        drag2.setVisibility(View.VISIBLE);
+                        drag3.setVisibility(View.VISIBLE);
+                        drag4.setVisibility(View.VISIBLE);
+                        cardView.setVisibility(View.INVISIBLE);
+                        setTransport(j);
+                    }
+                });
                 break;
 
             case 3:j=random.nextInt(3);
                 setPlaces(j);
+                nextButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        j=random.nextInt(3);
+                        g1.setVisibility(View.VISIBLE);
+                        g2.setVisibility(View.VISIBLE);
+                        drag1.setVisibility(View.VISIBLE);
+                        drag2.setVisibility(View.VISIBLE);
+                        drag3.setVisibility(View.VISIBLE);
+                        drag4.setVisibility(View.VISIBLE);
+                        cardView.setVisibility(View.INVISIBLE);
+                        setPlaces(j);
+                    }
+                });
                 break;
         }
 
-        /*
-        Setting Actions for next button
-         */
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                g1.setVisibility(View.VISIBLE);
-                g2.setVisibility(View.VISIBLE);
-                cardView.setVisibility(View.INVISIBLE);
-            }
-                    });
 
     }
     /*
@@ -707,15 +753,22 @@ public class GameActivity extends AppCompatActivity {
                         if (droptarget.getTag().toString().equals(option.getTag().toString()))
                         {
                             droptarget.setImageDrawable(option.getDrawable());
-                            option.setVisibility(View.GONE);
+                            option.setVisibility(View.INVISIBLE);
+                            option.setImageResource(0);
                             Toast.makeText(GameActivity.this, "Correct!!", Toast.LENGTH_SHORT).show();
-                            if (drag1.getVisibility()==View.GONE&&
-                                drag2.getVisibility()==View.GONE&&
-                                drag3.getVisibility()==View.GONE&&
-                                drag4.getVisibility()==View.GONE) {
-                                    g1.setVisibility(View.INVISIBLE);
+                            if (drag1.getVisibility()==View.INVISIBLE&
+                                drag2.getVisibility()==View.INVISIBLE&
+                                drag3.getVisibility()==View.INVISIBLE&
+                                drag4.getVisibility()==View.INVISIBLE)
+                            {
+                                      g1.setVisibility(View.INVISIBLE);
                                       g2.setVisibility(View.INVISIBLE);
-                                    cardView.setVisibility(View.VISIBLE);}
+                                      cardView.setVisibility(View.VISIBLE);
+                                      answer1.setImageDrawable(null);
+                                      answer2.setImageDrawable(null);
+                                      answer3.setImageDrawable(null);
+                                      answer4.setImageDrawable(null);
+                            }
 
                         }
                         else
@@ -733,8 +786,5 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-}
-
-
-
+    }
 }

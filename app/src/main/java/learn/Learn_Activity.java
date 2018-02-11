@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.example.rishabh.matchgame.R;
 
+import me.relex.circleindicator.CircleIndicator;
+
 public class Learn_Activity extends AppCompatActivity {
     ViewPager viewPager;
     TextView imageText;
@@ -16,6 +18,7 @@ public class Learn_Activity extends AppCompatActivity {
     placesSwip places;
     animalSwip animals;
     transportSwip transport;
+    CircleIndicator indicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,8 @@ public class Learn_Activity extends AppCompatActivity {
         setContentView(R.layout.learn_game);
 
         viewPager=(ViewPager)findViewById(R.id.viewPager);
+        indicator=(CircleIndicator)findViewById(R.id.cirIndicator);
+
 
         int i;
         Intent intent=getIntent();
@@ -34,6 +39,7 @@ public class Learn_Activity extends AppCompatActivity {
             case 0:
                 animals=new animalSwip(this);
                 viewPager.setAdapter(animals);
+                 indicator.setViewPager(viewPager);
                 animals.notifyDataSetChanged();
                 imageText=(TextView)findViewById(R.id.imageText);
                 imageText.setVisibility(View.VISIBLE);
@@ -93,6 +99,7 @@ public class Learn_Activity extends AppCompatActivity {
 
                 places=new placesSwip(this);
                 viewPager.setAdapter(places);
+                 indicator.setViewPager(viewPager);
                 places.notifyDataSetChanged();
                 imageText=(TextView)findViewById(R.id.imageText);
                 imageText.setVisibility(View.VISIBLE);
@@ -149,6 +156,7 @@ public class Learn_Activity extends AppCompatActivity {
                 imageText.setVisibility(View.INVISIBLE);
                 occupation=new occupationSwip(this);
               viewPager.setAdapter(occupation);
+               indicator.setViewPager(viewPager);
               viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -177,6 +185,7 @@ public class Learn_Activity extends AppCompatActivity {
             case 3:
                 transport=new transportSwip(this);
                 viewPager.setAdapter(transport);
+                 indicator.setViewPager(viewPager);
                 transport.notifyDataSetChanged();
                 imageText=(TextView)findViewById(R.id.imageText);
                 imageText.setVisibility(View.VISIBLE);

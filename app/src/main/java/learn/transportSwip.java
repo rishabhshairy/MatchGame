@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.rishabh.matchgame.R;
 
 public class transportSwip extends PagerAdapter {
@@ -50,7 +51,8 @@ public class transportSwip extends PagerAdapter {
         layoutInflater=(LayoutInflater)ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View itemView=layoutInflater.inflate(R.layout.custom_swip,container,false);
         ImageView imageView=(ImageView) itemView.findViewById(R.id.swip_image);
-        imageView.setImageResource(resources[position]);
+        //imageView.setImageResource(resources[position]);
+        Glide.with(ctx).load(resources[position]).into(imageView);
         container.addView(itemView);
         return itemView;
 
