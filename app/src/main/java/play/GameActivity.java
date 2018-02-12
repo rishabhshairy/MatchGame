@@ -9,8 +9,8 @@ import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +25,8 @@ import java.util.Random;
 public class GameActivity extends AppCompatActivity {
     ImageView drag1,drag2,drag3,drag4,answer1,answer2,answer3,answer4;
     TextView answerText1,answerText2,answerText3,answerText4;
-    GridLayout g1,g2;
+    LinearLayout g1;
+    LinearLayout g2;
     CardView cardView;
     Button nextButton;
     private ImageView[] options;
@@ -80,8 +81,8 @@ public class GameActivity extends AppCompatActivity {
         answerTexts[3]=answerText4;
 
 
-        g1=(GridLayout)findViewById(R.id.grid1);
-        g2=(GridLayout)findViewById(R.id.grid2);
+        g1=(LinearLayout) findViewById(R.id.grid1);
+        g2=(LinearLayout) findViewById(R.id.grid2);
         cardView=(CardView)findViewById(R.id.buttonCard);
 
         drag1.setOnTouchListener(new MyOnTouchListener());
