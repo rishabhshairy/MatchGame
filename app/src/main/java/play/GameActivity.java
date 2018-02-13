@@ -153,8 +153,26 @@ public class GameActivity extends AppCompatActivity {
                 });
                 break;
 
-            case 3:j=random.nextInt(3);
-                setPlaces(j);
+            case 3:j=random.nextInt(2);
+            setPlaces(j);
+            nextButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    j=random.nextInt(2);
+                    g1.setVisibility(View.VISIBLE);
+                    g2.setVisibility(View.VISIBLE);
+                    drag1.setVisibility(View.VISIBLE);
+                    drag2.setVisibility(View.VISIBLE);
+                    drag3.setVisibility(View.VISIBLE);
+                    drag4.setVisibility(View.VISIBLE);
+                    cardView.setVisibility(View.INVISIBLE);
+                    setPlaces(j);
+                }
+            });
+            break;
+
+                case 4:j=random.nextInt(3);
+                setSports(j);
                 nextButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -166,7 +184,7 @@ public class GameActivity extends AppCompatActivity {
                         drag3.setVisibility(View.VISIBLE);
                         drag4.setVisibility(View.VISIBLE);
                         cardView.setVisibility(View.INVISIBLE);
-                        setPlaces(j);
+                        setSports(j);
                     }
                 });
                 break;
