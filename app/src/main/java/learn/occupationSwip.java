@@ -22,7 +22,7 @@ public class occupationSwip extends PagerAdapter {
             R.drawable.dc,
             R.drawable.photographer,
             R.drawable.pilot,
-            R.drawable.police,
+            R.drawable.policestation,
             R.drawable.postman,
             R.drawable.sailor,
             R.drawable.music};
