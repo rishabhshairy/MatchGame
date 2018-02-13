@@ -44,7 +44,7 @@ public class Learn_Activity extends AppCompatActivity {
                 animals.notifyDataSetChanged();
                 imageText=(TextView)findViewById(R.id.imageText);
                 imageText.setVisibility(View.VISIBLE);
-                imageText.setText("This is a bird");
+                imageText.setText("Bird");
                 viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                     @Override
                     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -104,7 +104,7 @@ public class Learn_Activity extends AppCompatActivity {
                 places.notifyDataSetChanged();
                 imageText=(TextView)findViewById(R.id.imageText);
                 imageText.setVisibility(View.VISIBLE);
-                 imageText.setText("This is a bank");
+                 imageText.setText("Bank");
               viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -135,6 +135,8 @@ public class Learn_Activity extends AppCompatActivity {
                     case 8:imageText.setText("Restraunt");
                         break;
                     case 9:imageText.setText("Supermarket");
+                        break;
+                    case 10:imageText.setText("Hotel");
                         break;
 
 
@@ -190,7 +192,7 @@ public class Learn_Activity extends AppCompatActivity {
                 transport.notifyDataSetChanged();
                 imageText=(TextView)findViewById(R.id.imageText);
                 imageText.setVisibility(View.VISIBLE);
-                imageText.setText("This is a ambulance");
+                imageText.setText("Ambulance");
                 viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                     @Override
                     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

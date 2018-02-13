@@ -50,6 +50,10 @@ public class sportSwip extends PagerAdapter {
         return view==object;
     }
 
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+
+    }
 
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
@@ -57,7 +61,7 @@ public class sportSwip extends PagerAdapter {
        View itemView=inflater.inflate(R.layout.custom_swip,container,false);
         ImageView imageView=(ImageView)itemView.findViewById(R.id.swip_image);
         Glide.with(ctx).load(resources[position]).into(imageView);
-        container.addView(imageView);
+        container.addView(itemView);
         return itemView;
     }
 }

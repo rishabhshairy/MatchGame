@@ -22,7 +22,8 @@ public class placesSwip extends PagerAdapter {
             R.drawable.playground,
             R.drawable.postoffice,
             R.drawable.restraunt,
-            R.drawable.supermarket};
+            R.drawable.supermarket,
+            R.drawable.hotel};
 
 
     private Context ctx;
