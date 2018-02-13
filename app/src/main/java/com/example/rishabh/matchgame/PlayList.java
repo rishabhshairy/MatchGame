@@ -30,6 +30,7 @@ public class PlayList extends AppCompatActivity {
         list.add("Occupation");//1
         list.add("Transportation");//2
         list.add("Public Places");//3
+        list.add("Sports");//4
         //setting adapter
         arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(arrayAdapter);
@@ -68,6 +69,13 @@ public class PlayList extends AppCompatActivity {
                         Intent intent3=new Intent(getApplicationContext(), GameActivity.class);
                         intent3.putExtra("choice",i);
                         startActivity(intent3);
+                        break;
+
+                    case 4:
+                        i=4;
+                        Intent intent4=new Intent(getApplicationContext(),GameActivity.class);
+                        intent4.putExtra("choice",i);
+                        startActivity(intent4);
                         break;
 
                 }

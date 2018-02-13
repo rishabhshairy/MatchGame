@@ -18,6 +18,7 @@ public class Learn_Activity extends AppCompatActivity {
     placesSwip places;
     animalSwip animals;
     transportSwip transport;
+    sportSwip sports;
     CircleIndicator indicator;
 
     @Override
@@ -55,29 +56,29 @@ public class Learn_Activity extends AppCompatActivity {
 
                         switch (position)
                         {
-                            case 0:imageText.setText("This is a bird");
+                            case 0:imageText.setText("bird");
                                 break;
-                            case 1:imageText.setText("This is a cat");
+                            case 1:imageText.setText("cat");
                                 break;
-                            case 2:imageText.setText("This is a dog");
+                            case 2:imageText.setText("dog");
                                 break;
-                            case 3:imageText.setText("This is a elephant");
+                            case 3:imageText.setText( "elephant");
                                 break;
-                            case 4:imageText.setText("This is a giraffe");
+                            case 4:imageText.setText( "giraffe");
                                 break;
-                            case 5:imageText.setText("This is a horse");
+                            case 5:imageText.setText("horse");
                                 break;
-                            case 6:imageText.setText("This is a lion");
+                            case 6:imageText.setText( "lion");
                                 break;
-                            case 7:imageText.setText("This is a mice");
+                            case 7:imageText.setText("mice");
                                 break;
-                            case 8:imageText.setText("This is a panda");
+                            case 8:imageText.setText("panda");
                                 break;
-                            case 9:imageText.setText("This is a Polar bear");
+                            case 9:imageText.setText("Polar bear");
                                 break;
-                            case 10:imageText.setText("This is a rabbit");
+                            case 10:imageText.setText( "rabbit");
                                 break;
-                            case 11:imageText.setText("This is a tiger");
+                            case 11:imageText.setText("tiger");
 
 
                         }
@@ -115,25 +116,25 @@ public class Learn_Activity extends AppCompatActivity {
 
                 switch (position)
                 {
-                    case 0:imageText.setText("This is a bank");
+                    case 0:imageText.setText("Bank");
                         break;
-                    case 1:imageText.setText("This is a Bus Station");
+                    case 1:imageText.setText("Bus Station");
                         break;
-                    case 2:imageText.setText("This is a library");
+                    case 2:imageText.setText("library");
                         break;
-                    case 3:imageText.setText("This is a Police Station");
+                    case 3:imageText.setText("Police Station");
                         break;
-                    case 4:imageText.setText("This is a school");
+                    case 4:imageText.setText("school");
                         break;
-                    case 5:imageText.setText("This is a Market Area");
+                    case 5:imageText.setText("Market Area");
                         break;
-                    case 6:imageText.setText("This is a Park");
+                    case 6:imageText.setText("Park");
                         break;
-                    case 7:imageText.setText("This is a Post Office");
+                    case 7:imageText.setText("Post Office");
                         break;
-                    case 8:imageText.setText("This is a Restraunt");
+                    case 8:imageText.setText("Restraunt");
                         break;
-                    case 9:imageText.setText("This is a Supermarket");
+                    case 9:imageText.setText("Supermarket");
                         break;
 
 
@@ -231,6 +232,63 @@ public class Learn_Activity extends AppCompatActivity {
                                 break;
                             case 14:imageText.setText("Train");
                                 break;
+
+
+                        }
+                    }
+
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+
+                    }
+                });
+                break;
+                /*
+                For Sports
+                */
+            case 4:
+                sports=new sportSwip(this);
+                viewPager.setAdapter(sports);
+                 indicator.setViewPager(viewPager);
+                sports.notifyDataSetChanged();
+                imageText=(TextView)findViewById(R.id.imageText);
+                imageText.setVisibility(View.VISIBLE);
+                imageText.setText("Chess");
+                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+
+                        switch (position)
+                        {
+                            case 0:imageText.setText("Chess");
+                                break;
+                            case 1:imageText.setText("Cricket");
+                                break;
+                            case 2:imageText.setText("Cycling");
+                                break;
+                            case 3:imageText.setText( "Dirtbike");
+                                break;
+                            case 4:imageText.setText( "Golf");
+                                break;
+                            case 5:imageText.setText("American Football");
+                                break;
+                            case 6:imageText.setText( "Tennis");
+                                break;
+                            case 7:imageText.setText("Swimming");
+                                break;
+                            case 8:imageText.setText("Volleyball");
+                                break;
+                            case 9:imageText.setText("Soccer");
+                                break;
+                            case 10:imageText.setText( "Basketball");
+                                break;
+                            case 11:imageText.setText("Snooker");
 
 
                         }

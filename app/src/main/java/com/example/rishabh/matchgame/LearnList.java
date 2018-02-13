@@ -25,10 +25,11 @@ public class LearnList extends AppCompatActivity {
         listView.getBackground().setAlpha(30);
         Toast.makeText(this, "Welcome to Learning Section", Toast.LENGTH_SHORT).show();
         list=new ArrayList<String>();
-        list.add("LEARN ABOUT ANIMALS");
-        list.add("LEARN ABOUT PUBLIC PLACE");
-        list.add("LEARN ABOUT OCCUPATION");
-        list.add("LEARN ABOUT TRANSPOTATION");
+        list.add("ANIMALS");
+        list.add("PUBLIC PLACE");
+        list.add("OCCUPATION");
+        list.add("TRANSPOTATION");
+        list.add("SPORTS");
 
         arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(arrayAdapter);
@@ -59,6 +60,11 @@ public class LearnList extends AppCompatActivity {
                             intent3.putExtra("choice",i);
                             startActivity(intent3);
                             break;
+                        case 4:
+                            i=4;
+                            Intent intent4=new Intent(getApplicationContext(),Learn_Activity.class);
+                            intent4.putExtra("choice",i);
+                            startActivity(intent4);
                     }
             }
         });
