@@ -585,7 +585,7 @@ public class GameActivity extends AppCompatActivity {
      */
   private void setPlaces(int i)
   {
-          Random  random=new Random();
+        Random  random=new Random();
         int k;
         int a,b,c,d;
         a=random.nextInt(4);
@@ -682,6 +682,141 @@ public class GameActivity extends AppCompatActivity {
 
               break;
 
+      }
+  }
+    /*
+    Images for sports quiz
+     */
+  private void setSports(int i)
+  {
+      Random  random=new Random();
+        int k;
+        int a,b,c,d;
+        a=random.nextInt(4);
+        b=random.nextInt(4);
+        c =random.nextInt(4);
+        d=random.nextInt(4);
+        //setting random images
+        while (true){
+            if(a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a)
+            {
+                options[a]=(ImageView)findViewById(R.id.drag1);
+                options[b]=(ImageView)findViewById(R.id.drag2);
+                options[c]=(ImageView)findViewById(R.id.drag3);
+                options[d]=(ImageView)findViewById(R.id.drag4);
+
+                answers[a]=findViewById(R.id.answer2);
+              answers[b]=findViewById(R.id.answer1);
+              answers[c]=findViewById(R.id.answer4);
+              answers[d]=findViewById(R.id.answer3);
+
+              answerTexts[a]=(TextView)findViewById(R.id.answerText2);
+              answerTexts[b]=(TextView)findViewById(R.id.answerText1);
+              answerTexts[c]=(TextView)findViewById(R.id.answerText4);
+              answerTexts[d]=(TextView)findViewById(R.id.answerText3);
+                break;
+            }
+            a=random.nextInt(4);
+            b=random.nextInt(4);
+            c =random.nextInt(4);
+            d=random.nextInt(4);
+        }
+
+      switch (i){
+          case 0:
+              for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(SportList.sport1[m]);
+                  options[m].setTag(SportList.sporttag[m]);
+              }
+              a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a){
+                      answers[a].setTag(SportList.sporttag[a]);
+                      answerTexts[a].setText(SportList.sporttag[a]);
+                      answers[b].setTag(SportList.sporttag[b]);
+                      answerTexts[b].setText(SportList.sporttag[b]);
+                      answers[c].setTag(SportList.sporttag[c]);
+                      answerTexts[c].setText(SportList.sporttag[c]);
+                      answers[d].setTag(SportList.sporttag[d]);
+                      answerTexts[d].setText(SportList.sporttag[d]);
+                      break;
+                  }
+                a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              }
+              break;
+          case 1:
+
+               for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(SportList.sport2[m]);
+                  options[m].setTag(SportList.sporttag2[m]);
+              }
+              a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b  && c!=a){
+                      answers[a].setTag(SportList.sporttag2[a]);
+                      answerTexts[a].setText(SportList.sporttag2[a]);
+                      answers[b].setTag(SportList.sporttag2[b]);
+                      answerTexts[b].setText(SportList.sporttag2[b]);
+                      answers[c].setTag(SportList.sporttag2[c]);
+                      answerTexts[c].setText(SportList.sporttag2[c]);
+                      answers[d].setTag(SportList.sporttag2[d]);
+                      answerTexts[d].setText(SportList.sporttag2[d]);
+                      break;
+                  }
+                   a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+              }
+
+              break;
+          case 2:
+                for (int m=0;m<4;m++)
+              {
+                  options[m].setImageResource(SportList.sport3[m]);
+                  options[m].setTag(SportList.sporttag3[m]);
+              }
+              b=random.nextInt(4);
+              a=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+
+              while (true){
+                  if (a!=b && b!=c && c!=d && d!=a && d!=b && c!=a){
+                      Log.i("a",Integer.toString(a));
+                      Log.i("b",Integer.toString(b));
+                      Log.i("c",Integer.toString(c));
+                      Log.i("d",Integer.toString(d));
+                      answers[a].setTag(SportList.sporttag3[a]);
+                      answerTexts[a].setText(SportList.sporttag3[a]);
+                      answers[b].setTag(SportList.sporttag3[b]);
+                      answerTexts[b].setText(SportList.sporttag3[b]);
+                      answers[c].setTag(SportList.sporttag3[c]);
+                      answerTexts[c].setText(SportList.sporttag3[c]);
+                      answers[d].setTag(SportList.sporttag3[d]);
+                      answerTexts[d].setText(SportList.sporttag3[d]);
+                      break;
+                  }
+                  a=random.nextInt(4);
+              b=random.nextInt(4);
+              c=random.nextInt(4);
+              d=random.nextInt(4);
+              }
+              break;
       }
   }
 

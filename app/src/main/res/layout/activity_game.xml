@@ -38,52 +38,52 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.CardView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
-            android:layout_column="0"
-            android:layout_columnSpan="1"
-            android:layout_row="0"
-            android:layout_rowSpan="1"
-            android:layout_rowWeight="1"
-            android:clipToPadding="true"
-            app:cardBackgroundColor="#E1BEE7"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="16dp"
-            app:contentPadding="15sp">
-
-            <ImageView
-                android:id="@+id/drag1"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/bird" />
-        </android.support.v7.widget.CardView>
+                android:layout_height="135dp"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_row="0"
+                android:layout_rowSpan="1"
+                android:layout_rowWeight="1"
+                android:layout_weight="1"
+                android:clipToPadding="true"
+                app:cardBackgroundColor="#E1BEE7"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="16dp"
+                app:contentPadding="5sp">
+
+                <ImageView
+                    android:id="@+id/drag1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bird" />
+            </android.support.v7.widget.CardView>
 
 
-        <android.support.v7.widget.CardView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
-            android:layout_column="1"
-            android:layout_columnSpan="1"
-            android:layout_marginStart="9dp"
-            android:layout_row="0"
-            android:layout_rowSpan="1"
-            android:layout_rowWeight="1"
-            app:cardBackgroundColor="#E0F7FA"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="16dp"
-            app:contentPadding="15sp"
-            tools:ignore="RtlCompat">
-
-            <ImageView
-                android:id="@+id/drag2"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="fill"
-                android:src="@drawable/elephant" />
-        </android.support.v7.widget.CardView>
+                android:layout_height="135dp"
+                android:layout_column="1"
+                android:layout_columnSpan="1"
+                android:layout_marginStart="9dp"
+                android:layout_row="0"
+                android:layout_rowSpan="1"
+                android:layout_rowWeight="1"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#E0F7FA"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="16dp"
+                app:contentPadding="5sp"
+                tools:ignore="RtlCompat">
+
+                <ImageView
+                    android:id="@+id/drag2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:src="@drawable/elephant" />
+            </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
@@ -104,7 +104,7 @@
             app:cardBackgroundColor="#C5CAE9"
             app:cardCornerRadius="25dp"
             app:cardElevation="16dp"
-            app:contentPadding="15sp">
+            app:contentPadding="5sp">
 
             <ImageView
                 android:id="@+id/drag3"
@@ -128,7 +128,7 @@
             app:cardBackgroundColor="#B2DFDB"
             app:cardCornerRadius="25dp"
             app:cardElevation="16dp"
-            app:contentPadding="15sp"
+            app:contentPadding="5sp"
             tools:ignore="RtlCompat">
 
             <ImageView
