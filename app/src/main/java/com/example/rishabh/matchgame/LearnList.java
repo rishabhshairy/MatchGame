@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,8 +13,7 @@ import java.util.ArrayList;
 import learn.Learn_Activity;
 
 public class LearnList extends AppCompatActivity {
-    ArrayList<String> list;
-    ArrayAdapter arrayAdapter;
+    ArrayList<MyOptions> list=new ArrayList<>();
     ListView listView;
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -24,14 +22,13 @@ public class LearnList extends AppCompatActivity {
         listView=(ListView)findViewById(R.id.learnList);
         listView.getBackground().setAlpha(30);
         Toast.makeText(this, "Welcome to Learning Section", Toast.LENGTH_SHORT).show();
-        list=new ArrayList<String>();
-        list.add("ANIMALS");
-        list.add("PUBLIC PLACE");
-        list.add("OCCUPATION");
-        list.add("TRANSPOTATION");
-        list.add("SPORTS");
+        list.add(new MyOptions("Animals"));
+        list.add(new MyOptions("Public Places"));
+        list.add(new MyOptions("Occupation"));
+        list.add(new MyOptions("Transport"));
+        list.add(new MyOptions("Sports"));
 
-        arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,list);
+        MyCard arrayAdapter=new MyCard(this,R.layout.card_list,list);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

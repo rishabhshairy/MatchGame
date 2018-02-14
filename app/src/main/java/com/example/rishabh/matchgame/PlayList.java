@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,8 +14,8 @@ import play.GameActivity;
 
 public class PlayList extends AppCompatActivity {
     ListView listView;
-    ArrayList<String> list;
-    ArrayAdapter arrayAdapter;
+    ArrayList<MyOptions> list=new ArrayList<>();
+    MyCard arrayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,14 +24,13 @@ public class PlayList extends AppCompatActivity {
         listView=(ListView)findViewById(R.id.playList);
         listView.getBackground().setAlpha(30);
         //inflating array list
-        list=new ArrayList<String>();
-        list.add("Animals");//0
-        list.add("Occupation");//1
-        list.add("Transportation");//2
-        list.add("Public Places");//3
-        list.add("Sports");//4
+        list.add(new MyOptions("Animals"));
+        list.add(new MyOptions("Public Places"));
+        list.add(new MyOptions("Occupation"));
+        list.add(new MyOptions("Transport"));
+        list.add(new MyOptions("Sports"));
         //setting adapter
-        arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,list);
+        arrayAdapter=new MyCard(this,R.layout.card_list,list);
         listView.setAdapter(arrayAdapter);
 
         //setting click listener
