@@ -39,19 +39,15 @@ public class PlayList extends AppCompatActivity {
                 compatTextView.setVisibility(View.VISIBLE);
                 listView.setVisibility(View.INVISIBLE);
                 break;
-
+            case R.id.closeHelp:
+                compatTextView.setVisibility(View.INVISIBLE);
+                listView.setVisibility(View.VISIBLE);
 
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onOptionsMenuClosed(Menu menu) {
 
-        compatTextView.setVisibility(View.INVISIBLE);
-        listView.setVisibility(View.VISIBLE);
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
