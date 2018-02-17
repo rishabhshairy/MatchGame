@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.mikhaellopez.circularimageview.CircularImageView;
+
 import java.util.ArrayList;
 
 /**
@@ -37,6 +39,8 @@ public class MyCard extends ArrayAdapter<MyOptions> {
         LayoutInflater inflater=(LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v=inflater.inflate(R.layout.card_list,null);
         TextView cardText=(TextView)v.findViewById(R.id.cardText);
+        CircularImageView imageView=(CircularImageView)v.findViewById(R.id.cardImage);
+        imageView.setImageResource(options.get(position).getResid());
         cardText.setText(options.get(position).getOptions());
         return v;
     }

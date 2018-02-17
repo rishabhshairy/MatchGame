@@ -15,6 +15,7 @@ import learn.Learn_Activity;
 public class LearnList extends AppCompatActivity {
     ArrayList<MyOptions> list=new ArrayList<>();
     ListView listView;
+    int resid[]={R.drawable.animalicon,R.drawable.placesicon,R.drawable.occion,R.drawable.transporticon,R.drawable.sporticon};
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +23,11 @@ public class LearnList extends AppCompatActivity {
         listView=(ListView)findViewById(R.id.learnList);
         listView.getBackground().setAlpha(30);
         Toast.makeText(this, "Welcome to Learning Section", Toast.LENGTH_SHORT).show();
-        list.add(new MyOptions("Animals"));
-        list.add(new MyOptions("Public Places"));
-        list.add(new MyOptions("Occupation"));
-        list.add(new MyOptions("Transport"));
-        list.add(new MyOptions("Sports"));
+        list.add(new MyOptions("Animals",resid[0]));
+        list.add(new MyOptions("Public Places",resid[1]));
+        list.add(new MyOptions("Occupation",resid[2]));
+        list.add(new MyOptions("Transport",resid[3]));
+        list.add(new MyOptions("Sports",resid[4]));
 
         MyCard arrayAdapter=new MyCard(this,R.layout.card_list,list);
         listView.setAdapter(arrayAdapter);

@@ -6,9 +6,20 @@ package com.example.rishabh.matchgame;
 
 public class MyOptions {
     String options;
+    int resid;
 
-    public MyOptions(String options) {
+    public MyOptions(String options,int id) {
         this.options = options;
+        this.resid=id;
+
+    }
+
+    public int getResid() {
+        return resid;
+    }
+
+    public void setResid(int resid) {
+        this.resid = resid;
     }
 
     public String getOptions() {

@@ -16,6 +16,7 @@ public class PlayList extends AppCompatActivity {
     ListView listView;
     ArrayList<MyOptions> list=new ArrayList<>();
     MyCard arrayAdapter;
+    int resid[]={R.drawable.animalicon,R.drawable.placesicon,R.drawable.occion,R.drawable.transporticon,R.drawable.sporticon};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +25,11 @@ public class PlayList extends AppCompatActivity {
         listView=(ListView)findViewById(R.id.playList);
         listView.getBackground().setAlpha(30);
         //inflating array list
-        list.add(new MyOptions("Animals"));
-        list.add(new MyOptions("Public Places"));
-        list.add(new MyOptions("Occupation"));
-        list.add(new MyOptions("Transport"));
-        list.add(new MyOptions("Sports"));
+        list.add(new MyOptions("Animals",resid[0]));
+        list.add(new MyOptions("Public Places",resid[1]));
+        list.add(new MyOptions("Occupation",resid[2]));
+        list.add(new MyOptions("Transport",resid[3]));
+        list.add(new MyOptions("Sports",resid[4]));
         //setting adapter
         arrayAdapter=new MyCard(this,R.layout.card_list,list);
         listView.setAdapter(arrayAdapter);
