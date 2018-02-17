@@ -117,7 +117,25 @@ public class GameActivity extends AppCompatActivity {
                 });
                 break;
 
-            case 1:j=random.nextInt(3);
+            case 1:j=random.nextInt(2);
+                setPlaces(j);
+                nextButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        j=random.nextInt(2);
+                        g1.setVisibility(View.VISIBLE);
+                        g2.setVisibility(View.VISIBLE);
+                        drag1.setVisibility(View.VISIBLE);
+                        drag2.setVisibility(View.VISIBLE);
+                        drag3.setVisibility(View.VISIBLE);
+                        drag4.setVisibility(View.VISIBLE);
+                        cardView.setVisibility(View.INVISIBLE);
+                        setPlaces(j);
+                    }
+                });
+                break;
+
+            case 2:j=random.nextInt(3);
                 setOccupation(j);
                 nextButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -135,30 +153,12 @@ public class GameActivity extends AppCompatActivity {
                 });
                 break;
 
-            case 2:j=random.nextInt(3);
-                setTransport(j);
-                nextButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        j=random.nextInt(3);
-                        g1.setVisibility(View.VISIBLE);
-                        g2.setVisibility(View.VISIBLE);
-                        drag1.setVisibility(View.VISIBLE);
-                        drag2.setVisibility(View.VISIBLE);
-                        drag3.setVisibility(View.VISIBLE);
-                        drag4.setVisibility(View.VISIBLE);
-                        cardView.setVisibility(View.INVISIBLE);
-                        setTransport(j);
-                    }
-                });
-                break;
-
-            case 3:j=random.nextInt(2);
-            setPlaces(j);
+            case 3:j=random.nextInt(3);
+            setTransport(j);
             nextButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    j=random.nextInt(2);
+                    j=random.nextInt(3);
                     g1.setVisibility(View.VISIBLE);
                     g2.setVisibility(View.VISIBLE);
                     drag1.setVisibility(View.VISIBLE);
@@ -166,7 +166,7 @@ public class GameActivity extends AppCompatActivity {
                     drag3.setVisibility(View.VISIBLE);
                     drag4.setVisibility(View.VISIBLE);
                     cardView.setVisibility(View.INVISIBLE);
-                    setPlaces(j);
+                    setTransport(j);
                 }
             });
             break;
