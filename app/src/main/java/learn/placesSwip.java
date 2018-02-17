@@ -19,7 +19,7 @@ public class placesSwip extends PagerAdapter {
             R.drawable.policestation,
             R.drawable.school,
             R.drawable.publicplaces,
-            R.drawable.playground,
+            R.drawable.park,
             R.drawable.postoffice,
             R.drawable.restraunt,
             R.drawable.supermarket,

@@ -9,7 +9,7 @@ import com.example.rishabh.matchgame.R;
 public class PlacesList {
     //resources for drawable
     static int placesList[]={R.drawable.bank,R.drawable.busstation,R.drawable.library,R.drawable.postoffice};
-    static int placesList1[]={R.drawable.restraunt,R.drawable.playground,R.drawable.school,R.drawable.policestation};
+    static int placesList1[]={R.drawable.restraunt,R.drawable.park,R.drawable.school,R.drawable.policestation};
 ;
     //tags for images in answer view
 
