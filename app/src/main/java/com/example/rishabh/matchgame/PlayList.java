@@ -41,7 +41,7 @@ public class PlayList extends AppCompatActivity {
                 break;
             case R.id.closeHelp:
                 compatTextView.setVisibility(View.INVISIBLE);
-                listView.setVisibility(View.VISIBLE);
+                listView.setVisibility(View. VISIBLE);
 
         }
         return super.onOptionsItemSelected(item);
