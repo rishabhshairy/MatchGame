@@ -7,7 +7,7 @@
     <string name="learn_name">Learning Section</string>
     <string name="play_name">Game Section</string>
     <string name="option_name">Your Choice</string>
-
+    <string name="help">Drag the respective photos into their blank space.If u get all correct click on next to load next set of options.</string>
     <array name="animals">
         <item >@drawable/cat</item>
         <item >@drawable/dog</item>

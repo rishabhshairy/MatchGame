@@ -3,6 +3,10 @@ package com.example.rishabh.matchgame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatTextView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,11 +20,44 @@ public class PlayList extends AppCompatActivity {
     ListView listView;
     ArrayList<MyOptions> list=new ArrayList<>();
     MyCard arrayAdapter;
+    AppCompatTextView compatTextView;
     int resid[]={R.drawable.animalicon,R.drawable.placesicon,R.drawable.occion,R.drawable.transporticon,R.drawable.sporticon};
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.play_menu,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.help:
+                compatTextView.setVisibility(View.VISIBLE);
+                listView.setVisibility(View.INVISIBLE);
+                break;
+
+
+        }
+        return true;
+    }
+
+    @Override
+    public void onOptionsMenuClosed(Menu menu) {
+
+        compatTextView.setVisibility(View.INVISIBLE);
+        listView.setVisibility(View.VISIBLE);
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_list);
+        compatTextView=(AppCompatTextView)findViewById(R.id.helpText);
         Toast.makeText(this, "Welcome to Game Section", Toast.LENGTH_SHORT).show();
         listView=(ListView)findViewById(R.id.playList);
         listView.getBackground().setAlpha(30);
